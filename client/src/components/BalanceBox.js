@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import web3 from 'web3';
+import { isAddress } from 'web3-utils';
 import BigNumber from 'bignumber.js';
 
 import { getBalanceForToken } from '../utils/api';
@@ -66,9 +66,6 @@ class BalanceBox extends Component {
   renderBalance() {
     const { balance } = this.state;
     if (balance) {
-      // const displayBalance = String(balance.toFixed());
-      // const displayBalanceInETH = balance.toNumber() > 0 ? web3.utils.fromWei(displayBalance) : 0;
-
       return (
         <div className="BalanceBox__balance">
           <Ether value={balance} />
@@ -81,7 +78,7 @@ class BalanceBox extends Component {
   validateAddress(e) {
     this.setState({ address: e.target.value });
 
-    if (web3 && web3.utils.isAddress(e.target.value)) {
+    if (isAddress(e.target.value)) {
       this.getBalance(e.target.value);
     }
     else {

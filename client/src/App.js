@@ -31,7 +31,6 @@ class App extends Component {
   // Get all valid token address from api
   async initTokens() {
     const allTokens = await getAllTokens();
-    console.log('allTokens', allTokens[166])
     this.setState({
       allTokens
     });
