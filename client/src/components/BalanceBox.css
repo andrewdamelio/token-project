@@ -1,0 +1,29 @@
+.BalanceBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 10px 0 #00000025, 0 16px 24px 0 #0000002f;
+  margin: 1rem;
+  background: #eaeaea;
+  width: 350px;
+  height: 200px;
+}
+
+.BalanceBox__title {
+  font-size: 1.25rem;
+}
+
+.BalanceBox__emoji {
+  font-size: 4rem;
+}
+
+.BalanceBox__setAddress {
+  width: 100%;
+  text-align: center;
+}
+
+.BalanceBox__balance {
+  font-size: 2rem;
+}

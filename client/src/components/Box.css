@@ -1,0 +1,59 @@
+.Box {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 6px 10px 0 #00000025, 0 16px 24px 0 #0000002f;
+  margin: 1rem;
+  background: #eaeaea;
+  width: 350px;
+  height: 200px;
+  user-select: none;
+}
+
+.Box__emoji {
+  font-size: 5rem;
+}
+
+.Box__title {
+  position: absolute;
+  top: 12px;
+  margin: auto;
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.Box__result {
+  font-size: 2rem;
+}
+
+
+.Box__emoji--mask {
+  background: grey;
+  height: 55px;
+  width: 55px;
+  animation: animate_mask 0.75s infinite alternate-reverse;
+}
+
+.Box__title--mask {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: grey;
+  width: 130px;
+  height: 5px;
+  animation: animate_mask 0.75s infinite alternate-reverse;
+}
+
+.Box__result--mask {
+  background: grey;
+  height: 85px;
+  width: 125px;
+  animation: animate_mask 0.75s infinite alternate-reverse;
+}
+
+@-webkit-keyframes animate_mask {
+	from { background-color: #e8e9ec; }
+	to { background-color: #b7b7b7; }
+}

@@ -1,0 +1,28 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  min-height: 100vh;
+  background-image: linear-gradient(to top right, royalblue, rebeccapurple);
+  color: #282c34;
+  text-align: center;
+}
+
+.App__header {
+  font-size: 6rem;
+}
+
+.App__history {
+  margin: 1rem;
+}
+
+.App__history__address {
+  cursor: pointer;
+}
+
+.App__history__address:hover {
+  cursor: pointer;
+  color: white;
+}
+

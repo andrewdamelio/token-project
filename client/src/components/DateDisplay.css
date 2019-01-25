@@ -1,0 +1,18 @@
+.DateDisplay {
+  font-size: 1rem;
+}
+
+.DateDisplay__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.DateDisplay__changeDateTime {
+  margin: 1rem 0 0;
+}
+
+#picker {
+  height: 35px;
+  font-size: 1rem;
+  background: #c1535a1a;
+}
