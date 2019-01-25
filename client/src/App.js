@@ -31,12 +31,11 @@ class App extends Component {
   // Get all valid token address from api
   async initTokens() {
     const allTokens = await getAllTokens();
-    // console.log('at', allTokens); // TODO remove
+    console.log('allTokens', allTokens[166])
     this.setState({
       allTokens
     });
   }
-
 
   async componentWillMount() {
     // Show dashboard loading state if dashboard Route detected
@@ -67,6 +66,13 @@ class App extends Component {
   render() {
     const { recentSearches, renderDashboard, tokenAddress, lookupDate } = this.state;
 
+    const renderHeader = () => {
+      if (!renderDashboard) {
+        return <h1 className="App__header">Token Dashboard</h1>;
+      }
+      return null;
+    }
+
     const renderApp = () => {
       if (renderDashboard) {
         return (
@@ -88,37 +94,31 @@ class App extends Component {
       );
     }
 
-    let renderHistory = null;
-    let renderHeader = null;
+    const renderHistory = () => {
+      if (!renderDashboard && recentSearches && recentSearches.length > 0) {
+        const items = recentSearches.map((address, idx) => {
+          return (
+            <div className="App__history__item" key={idx}>
+              <div className="App__history__address" onClick={() => this.getTokenDetails(address)}>{address}</div>
+            </div>
+          );
+        });
 
-    if (!renderDashboard) {
-      renderHeader = (
-        <h1 className="App__header">Token Dashboard</h1>
-      )
-    }
-
-    if (!renderDashboard && recentSearches && recentSearches.length > 0) {
-      const items = recentSearches.map((address, idx) => {
         return (
-          <div className="App__history__item" key={idx}>
-            <div className="App__history__address" onClick={() => this.getTokenDetails(address)}>{address}</div>
+          <div className="App__history">
+            <h2 className="App__history__title">Recent Searches</h2>
+            {items}
           </div>
         );
-      });
-
-      renderHistory = (
-        <div className="App__history">
-          <h2 className="App__history__title">Recent Searches</h2>
-          {items}
-        </div>
-      )
+      }
+      return null;
     }
 
     return (
       <div className="App">
-        {renderHeader}
+        {renderHeader()}
         {renderApp()}
-        {renderHistory}
+        {renderHistory()}
       </div>
     );
   }

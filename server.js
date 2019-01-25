@@ -71,7 +71,6 @@ app.get("/:token/stats/richest", (request, response) => {
     const { token } = request.params
     let { time } = request.query
 
-    console.log('time', time);
     time = parseTime(time)
     if (time === null) {
         return response.status(400).send({ error: "time must be an integer" })
@@ -90,7 +89,6 @@ app.get("/:token/stats/mostActive", (request, response) => {
     const { token } = request.params
     let { time } = request.query
 
-    console.log('time', time);
     time = parseTime(time)
     if (time === null) {
         return response.status(400).send({ error: "time must be an integer" })
@@ -100,12 +98,7 @@ app.get("/:token/stats/mostActive", (request, response) => {
         return response.status(404).send({ error: "no such token" })
     }
 
-    // console.log('DATA', DATA);
-    console.log('token', token);
-    console.log('time', time);
-
     const mostActive = calculateMostActive(DATA, token, time)
-    console.log('mostActive', mostActive);
 
     response.type("json").send(JSON.stringify(mostActive))
 })

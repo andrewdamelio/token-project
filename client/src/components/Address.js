@@ -12,7 +12,7 @@ const Address = ({ address }) => {
     <div className="Address">
       <a target="_blank" href={`https://etherscan.io/address/${address}`} rel="noopener noreferrer">
         <Blockie address={address} />
-        <div className="Address__address">{address.substr(0, 8)}</div>
+        <div className="Address__label">{address.substr(0, 8)}</div>
       </a>
     </div>
   );

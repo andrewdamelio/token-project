@@ -5,6 +5,8 @@ import GetBalance from '../components/BalanceBox';
 
 import './Dashboard.css';
 
+// Dashboard page:
+// Allows users to see token data and make new queries
 const Dashboard = ({ data, tokenAddress, setlookupDate, lookupDate, goBack }) => {
   if (!data) {
     return null;

@@ -24,4 +24,6 @@
 2. ```yarn dev```
 3. Client: ```http://localhost:3000/```
 
-
+# Testing
+1. ```cd token-project```
+2. ``` npm run test```

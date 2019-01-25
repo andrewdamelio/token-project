@@ -3,6 +3,7 @@ import blockies from 'blockies';
 
 import './Blockie.css';
 
+// Render Blockie with provided ethereum adddress
 const Blockie = ({ address }) => {
   if (!address) {
     return null;
@@ -14,7 +15,7 @@ const Blockie = ({ address }) => {
   }).toDataURL();
 
   return (
-    <img className="Blockie__avatar" src={avatar} alt={address} />
+    <img className="Blockie" src={avatar} alt={address} />
   );
 }
 

@@ -4,6 +4,9 @@ import Flatpickr from 'react-flatpickr'
 import 'flatpickr/dist/themes/light.css'
 import './DateDisplay.css';
 
+const MIN_DATE = '1969-12-31';
+
+// Display and Edit dateTime
 const DateDisplay = ({ lookupDate, setlookupDate }) => {
   if (!lookupDate) {
     return null;
@@ -13,21 +16,15 @@ const DateDisplay = ({ lookupDate, setlookupDate }) => {
 
   return (
     <div className="DateDisplay">
-      <div className="DateDisplay__content">
-        <div className="DateDisplay__changeDateTime">
-          <Flatpickr
-            id="picker"
-            data-enable-time={true}
-            value={displayAmount}
-            options={{minDate: '1969-12-31'}}
-            onChange={date => setlookupDate(date)}
-          />
-        </div>
-      </div>
+      <Flatpickr
+        id="picker"
+        data-enable-time={true}
+        value={displayAmount}
+        options={{minDate: MIN_DATE}}
+        onChange={date => setlookupDate(date)}
+      />
     </div>
   );
 }
 
 export default DateDisplay;
-
-

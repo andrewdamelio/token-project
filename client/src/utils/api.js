@@ -46,4 +46,3 @@ export function getBalanceForToken(tokenAddress, address, lookupDate) {
       console.log('error:', err);
     });
 }
-

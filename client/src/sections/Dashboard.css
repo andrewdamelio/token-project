@@ -9,19 +9,6 @@
   text-align: center;
 }
 
-@media (min-width: 1050px) {
-  .Dashboard {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    min-height: 100vh;
-    background-image: linear-gradient(to top right, royalblue, rebeccapurple);
-    color: #282c34;
-  }
-}
-
 .Dashboard__goBack {
   position: fixed;
   left: 1rem;
@@ -34,4 +21,17 @@
 
 .Dashboard__goBack:hover {
   transform: scale(1.2);
+}
+
+@media (min-width: 1050px) {
+  .Dashboard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background-image: linear-gradient(to top right, royalblue, rebeccapurple);
+    color: #282c34;
+  }
 }
