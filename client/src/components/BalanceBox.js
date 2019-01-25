@@ -11,7 +11,7 @@ import './BalanceBox.css';
 class BalanceBox extends Component {
   state = {
     balance: null,
-    address: null
+    address: ''
   }
 
   componentWillReceiveProps(nextProps) {

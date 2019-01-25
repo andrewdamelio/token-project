@@ -129,6 +129,12 @@ class App extends Component {
     const dateRange = lookupDate || NOW;
 
     if (tokenAddress && this.state.allTokens.includes(tokenAddress)) {
+      // Save history for easy lookup
+      if (!this.state.recentSearches.includes(tokenAddress)) {
+        const searchData = JSON.stringify(this.state.recentSearches.concat(tokenAddress));
+        window.localStorage.setItem('recent', searchData);
+      }
+
       // Route Management
       window.history.pushState({}, null, `/${tokenAddress}`);
 
@@ -170,11 +176,6 @@ class App extends Component {
     }
 
     if (validTokens.includes(pathName)) {
-      // Save history for easy lookup
-      if (!this.state.recentSearches.includes(pathName)) {
-        const searchData = JSON.stringify(this.state.recentSearches.concat(pathName));
-        window.localStorage.setItem('recent', searchData);
-      }
       this.getTokenDetails(pathName, this.state.lookupDate);
     }
     else {
